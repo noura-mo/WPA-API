@@ -14,7 +14,7 @@ app.add_middleware(
 )
 
 try:
-    df = pd.read_csv("/content/Final dataset.csv")
+    df = pd.read_csv("Final dataset.csv")
     df['strength_value'] = pd.to_numeric(df['strength_value'], errors='coerce').fillna(0)
     df['price'] = pd.to_numeric(df['price'], errors='coerce').fillna(0)
 except Exception as e:
