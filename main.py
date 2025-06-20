@@ -1,4 +1,3 @@
-<
 import pandas as pd
 import numpy as np
 from fastapi import FastAPI, HTTPException
@@ -14,7 +13,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# تحميل البيانات
 try:
     df = pd.read_csv("/content/Final dataset.csv")
     df['strength_value'] = pd.to_numeric(df['strength_value'], errors='coerce').fillna(0)
@@ -73,4 +71,3 @@ async def get_best_medicine(request: MedicineRequest):
     if not results:
         raise HTTPException(status_code=404, detail="No matching medicines found")
     return {"Available_medicines": results}
->
